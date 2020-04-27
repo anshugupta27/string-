@@ -1,0 +1,45 @@
+https://practice.geeksforgeeks.org/problems/reverse-words-in-a-given-string/0
+
+ Q . i.like.this.program.very.much
+ ANS . much.very.program.this.like.i
+ 
+ 
+ 
+ 
+ #include<bits/stdc++.h>
+#define int long long int 
+#define TRY_HARD ios_base::sync_with_stdio(false);  cin.tie(NULL);  cout.tie(NULL);
+using namespace std;
+
+//TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD TRY_HARD 
+string reverse  ( int start , int end , string &s )
+{
+    for ( int i = start , j = end ; i< j ; i++ , j--  )
+    {
+        swap ( s[i] , s[j] ) ;
+    }
+    return s ;
+}
+signed main()
+ {
+	TRY_HARD ;
+	int t ;
+	cin >> t ;
+	while ( t-- )
+	{
+	    string s ;
+	    cin >> s ;
+	    int start = 0 ;
+	    for ( int i = 0 ; i < s.length()+1 ; i++ )
+	    {
+	        if ( s[i] == '.' || s[i] == '\0' )
+	        {
+	            s = reverse ( start , i-1 , s ) ;
+	            start  = i + 1 ;
+	        }
+	        
+	    }
+	    cout << reverse ( 0 , s.length()-1 , s ) << endl ;
+	}
+	
+}
