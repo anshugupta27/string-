@@ -17,3 +17,16 @@ int strstr(string s, string x)
     }
     return -1 ; 
 }
+
+
+or 
+
+
+
+int strstr(string s, string x)
+{
+    size_t found = s.find ( x ) ;
+    if ( found != string::npos ) 
+    return found ; 
+    return -1 ; 
+}
