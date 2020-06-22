@@ -1,0 +1,19 @@
+https://practice.geeksforgeeks.org/problems/implement-strstr/1/?track=ppc-strings&batchId=221
+
+
+
+
+int strstr(string s, string x)
+{
+    int j = 0 ; 
+    for ( int i = 0 ; i < s.length() ; i++ )
+    {
+        if ( s[i] == x[j] )
+        j++ ; 
+        else
+        j = 0 ; 
+        if ( j == x.length() )
+        return ( i - x.length() + 1 ) ;
+    }
+    return -1 ; 
+}
