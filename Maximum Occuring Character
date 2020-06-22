@@ -1,0 +1,27 @@
+https://practice.geeksforgeeks.org/problems/maximum-occuring-character-1587115620/1/?track=ppc-strings&batchId=221
+
+
+
+
+char getMaxOccuringChar(char* str)
+{
+    int n = strlen ( str ) ;
+    int i ; 
+    map < char , int > m ; 
+    for ( i = 0 ; i < n ; i++ )
+    {
+        m[str[i]]++ ; 
+    }
+    int Max = INT_MIN ; 
+    char c ; 
+    for ( auto it = m.begin() ; it != m.end() ; it++ )
+    {
+        if ( it -> second > Max )
+        {
+        Max = it -> second ;
+        c = it -> first ; 
+        }
+    }
+    return c ; 
+    
+}
