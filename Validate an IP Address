@@ -1,0 +1,31 @@
+https://practice.geeksforgeeks.org/problems/validate-an-ip-address-1587115621/1/?track=ppc-strings&batchId=221
+
+
+
+int isValid(char *ip) {
+    
+    int n = strlen ( ip ) ;
+    int count = 0 ; 
+    for ( int i = 0 ; i < n ; i++ )
+    {
+        string s ; 
+        while ( ip[i] != '.' and ip[i] != '\0' )
+        {
+            s += ip[i] ; 
+            if ( ip[i] < '0' || ip[i] > '9' )
+            return 0  ;
+            i++ ;
+           
+        }
+        if ( ip[i] == '.' )
+        count++ ; 
+        if ( s.length() <= 0 || ( s[0] == '0' and s.length() >1 )  || s.length() >= 4   )
+        return 0 ; 
+        int k = stoi ( s ) ;
+        if ( k > 255 )
+        return 0 ; 
+    }
+    if ( count != 3 )
+    return 0 ; 
+    return 1 ; 
+}
